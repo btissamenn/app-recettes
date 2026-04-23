@@ -13,9 +13,9 @@
         android:theme="@style/Theme.Apprecettes">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".RecipeListActivity"
             android:exported="true"
-            android:theme="@style/Theme.Apprecettes">
+            android:label="Liste des recettes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,19 +23,16 @@
         </activity>
 
         <activity
-            android:name=".RecipeListActivity"
-            android:exported="false"
-            android:label="Liste des recettes" />
+            android:name=".MainActivity"
+            android:exported="false" />
 
         <activity
             android:name=".AddRecipeActivity"
-            android:exported="false"
-            android:label="Ajouter une recette" />
+            android:exported="false" />
 
         <activity
             android:name=".DetailActivity"
-            android:exported="false"
-            android:label="Détail de la recette" />
+            android:exported="false" />
     </application>
 
 </manifest>

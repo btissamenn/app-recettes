@@ -32,18 +32,16 @@ class RecipeListActivity : AppCompatActivity() {
 
         val btnAdd = findViewById<FloatingActionButton>(R.id.btnAdd)
         btnAdd.setOnClickListener {
-            startActivity(Intent(this, AddRecipeActivity::class.java))
+            // Add functionality removed as per request
+            Toast.makeText(this, "Fonctionnalité d'ajout non incluse", Toast.LENGTH_SHORT).show()
         }
 
         setupSearch()
         setupCategories()
         loadData()
 
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val recipe = adapter.getItem(position) as Recipe
-            val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("recipe_id", recipe.id)
-            startActivity(intent)
+        listView.setOnItemClickListener { _, _, _, _ ->
+            // Detail activity removed as per request
         }
     }
 
