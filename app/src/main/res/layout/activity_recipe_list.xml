@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FBF9">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_recipes"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"
+                android:fontFamily="sans-serif-condensed-light" />
+
+            <TextView
+                android:id="@+id/tvRecipeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recipes_count_format"
+                android:textColor="#E8F5E9"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="24dp"
+                android:textStyle="italic" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        app:tint="#4CAF50" />
+
+                    <EditText
+                        android:id="@+id/searchInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/search_hint"
+                        android:paddingStart="12dp"
+                        android:textSize="16sp"
+                        android:textColor="#1B5E20"
+                        android:inputType="text" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:scrollbars="none"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:id="@+id/btnCategoryAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_chip_selected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_all"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategoryFavorites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_favorites"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategoryStarter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_starter"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategoryMain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_main"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategoryDessert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_dessert"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategoryBreakfast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_breakfast"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategoryDrinks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_drinks"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/btnCategorySnacks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingHorizontal="22dp"
+                        android:paddingVertical="10dp"
+                        android:text="@string/category_snacks"
+                        android:textColor="#4CAF50"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="80dp"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="16dp"
+                android:nestedScrollingEnabled="true" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:backgroundTint="#4CAF50"
+        app:tint="@color/white"
+        app:elevation="6dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

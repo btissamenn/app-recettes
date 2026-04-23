@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">app-recettes</string>
+    <string name="app_name">FitBite</string>
+    <string name="my_recipes">Mes Recettes</string>
+    <string name="recipes_count_format">%d recettes enregistrées</string>
+    <string name="search_hint">Trouver une recette...</string>
+    <string name="category_all">Tout</string>
+    <string name="category_favorites">Favoris</string>
+    <string name="category_starter">Entrée</string>
+    <string name="category_main">Plat</string>
+    <string name="category_dessert">Dessert</string>
+    <string name="category_breakfast">Petit-déj</string>
+    <string name="category_drinks">Boissons</string>
+    <string name="category_snacks">Snacks</string>
+    <string name="add_recipe_title">Ajouter une recette</string>
+    <string name="recipe_name_hint">Nom de la recette</string>
+    <string name="steps_hint">Étapes de préparation</string>
+    <string name="choose_photo">Choisir une photo</string>
+    <string name="save_recipe">Enregistrer la recette</string>
+    <string name="recipe_saved">Recette enregistrée !</string>
+    <string name="enter_name_error">Veuillez entrer un nom</string>
+    <string name="ingredient_hint">Ingrédient %d</string>
+    <string name="add_ingredient">Ajouter un ingrédient</string>
+    <string name="recipe_detail_title">Détail de la recette</string>
+    <string name="ingredients_title">Ingrédients</string>
+    <string name="preparation_title">Préparation</string>
+    <string name="delete_recipe">Supprimer la recette</string>
+    <string name="delete_confirmation_title">Supprimer la recette</string>
+    <string name="delete_confirmation_message">Voulez-vous vraiment supprimer cette recette ?</string>
+    <string name="cancel">Annuler</string>
+    <string name="delete">Supprimer</string>
+    <string name="recipe_deleted">Recette supprimée</string>
+    <string name="error_loading_recipe">Erreur lors du chargement de la recette</string>
+    <string name="time_format">%s min</string>
+    <string name="portions_format">%s pers.</string>
 </resources>
