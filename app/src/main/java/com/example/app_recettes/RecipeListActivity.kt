@@ -18,7 +18,6 @@ class RecipeListActivity : AppCompatActivity() {
     private lateinit var adapter: RecipeAdapter
     private lateinit var recipes: MutableList<Recipe>
     private lateinit var searchInput: EditText
-
     private lateinit var tvRecipeCount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +31,6 @@ class RecipeListActivity : AppCompatActivity() {
 
         val btnAdd = findViewById<FloatingActionButton>(R.id.btnAdd)
         btnAdd.setOnClickListener {
-            // Add functionality removed as per request
             Toast.makeText(this, "Fonctionnalité d'ajout non incluse", Toast.LENGTH_SHORT).show()
         }
 
@@ -40,11 +38,13 @@ class RecipeListActivity : AppCompatActivity() {
         setupCategories()
         loadData()
 
-        listView.setOnItemClickListener { _, _, _, _ ->
-            // Detail activity removed as per request
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val recipe = recipes[position]
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra(DetailActivity.EXTRA_RECIPE_ID, recipe.id)
+            startActivity(intent)
         }
     }
-
     private fun setupCategories() {
         val categories = listOf<TextView>(
             findViewById(R.id.btnCategoryAll),
@@ -59,19 +59,16 @@ class RecipeListActivity : AppCompatActivity() {
 
         categories.forEach { btn ->
             btn.setOnClickListener {
-                // Reset all to Dark Green background with White text
                 categories.forEach {
                     it.setBackgroundResource(R.drawable.bg_chip_unselected)
                     it.setTextColor(android.graphics.Color.WHITE)
-                    it.alpha = 0.8f 
+                    it.alpha = 0.8f
                     it.setTypeface(null, android.graphics.Typeface.NORMAL)
                 }
-                // Select clicked to Yellow with Dark Green text
                 btn.setBackgroundResource(R.drawable.bg_chip_selected)
                 btn.setTextColor(android.graphics.Color.parseColor("#1B5E20"))
                 btn.alpha = 1.0f
                 btn.setTypeface(null, android.graphics.Typeface.BOLD)
-                
                 filterByCategory(btn.text.toString())
             }
         }
@@ -79,9 +76,9 @@ class RecipeListActivity : AppCompatActivity() {
 
     private fun filterByCategory(category: String) {
         val filteredList = when (category) {
-            "Tout" -> recipes
+            "Tout"   -> recipes
             "Favoris" -> recipes.filter { it.isFavorite }
-            else -> recipes.filter { it.category == category }
+            else     -> recipes.filter { it.category == category }
         }
         adapter.updateData(filteredList)
         updateCount(filteredList.size)
@@ -98,7 +95,10 @@ class RecipeListActivity : AppCompatActivity() {
     }
 
     private fun filterRecipes(query: String) {
-        val filteredList = recipes.filter { it.name.contains(query, ignoreCase = true) || it.ingredients.contains(query, ignoreCase = true) }
+        val filteredList = recipes.filter {
+            it.name.contains(query, ignoreCase = true) ||
+                    it.ingredients.contains(query, ignoreCase = true)
+        }
         adapter.updateData(filteredList)
         updateCount(filteredList.size)
     }
