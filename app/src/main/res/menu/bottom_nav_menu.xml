@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_accueil"
+        android:icon="@drawable/ic_home"
+        android:title="Accueil"/>
+
+    <item
+        android:id="@+id/nav_ajouter"
+        android:icon="@drawable/ic_add"
+        android:title="Ajouter"/>
+
+    <item
+        android:id="@+id/nav_liste"
+        android:icon="@drawable/ic_list"
+        android:title="Liste"/>
+
+    <item
+        android:id="@+id/nav_favoris"
+        android:icon="@drawable/ic_heart"
+        android:title="Favoris"/>
+
+</menu>

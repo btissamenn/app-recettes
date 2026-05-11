@@ -23,4 +23,37 @@
     <color name="difficulty_medium_bg">#FFF3E0</color>
     <color name="difficulty_hard">#B71C1C</color>
     <color name="difficulty_hard_bg">#FFEBEE</color>
+
+    <!-- Couleurs écran Accueil (Yasmine) -->
+    <color name="green_main">#4A7C3F</color>
+    <color name="green_light_yasmine">#6AAF3D</color>
+    <color name="green_pale">#C8D9A0</color>
+    <color name="green_wash">#EAF2D2</color>
+    <color name="bg_soft">#FAFAF7</color>
+
+    <!-- Card image backgrounds -->
+    <color name="ci_amber_start">#FFF0CC</color>
+    <color name="ci_amber_end">#FFD97A</color>
+    <color name="ci_green_start">#DFF5C8</color>
+    <color name="ci_green_end">#B0E080</color>
+    <color name="ci_pink_start">#FFE0EC</color>
+    <color name="ci_pink_end">#FFB0C8</color>
+    <color name="ci_peach_start">#FFE8D8</color>
+    <color name="ci_peach_end">#FFBF9A</color>
+
+    <!-- Badges accueil -->
+    <color name="badge_easy_bg">#EEF7E2</color>
+    <color name="badge_easy_text">#4A7C3F</color>
+    <color name="badge_med_bg">#FEF5E4</color>
+    <color name="badge_med_text">#B07820</color>
+    <color name="badge_hard_bg">#FEE8E8</color>
+    <color name="badge_hard_text">#B03020</color>
+
+    <!-- Text accueil -->
+    <color name="text_dark">#1A2A08</color>
+    <color name="text_green">#6A8A40</color>
+    <color name="text_hint">#AAAAAA</color>
+
+    <!-- Nav -->
+    <color name="nav_inactive">#C8C8C8</color>
 </resources>

@@ -54,7 +54,6 @@ class DetailActivity : AppCompatActivity() {
         binding.tvRecipeName.text = recipe.name
         binding.tvCategory.text = recipe.category
 
-        // Difficulté
         binding.tvDifficulty.text = recipe.difficulte ?: "—"
         binding.tvDifficulty.setTextColor(
             ContextCompat.getColor(this, when (recipe.difficulte) {
@@ -65,7 +64,6 @@ class DetailActivity : AppCompatActivity() {
             })
         )
 
-        // Temps
         binding.tvTime.text = recipe.tempsMinutes?.takeIf { it > 0 }?.let { t ->
             if (t >= 60) {
                 val h = t / 60; val m = t % 60
@@ -73,11 +71,9 @@ class DetailActivity : AppCompatActivity() {
             } else "${t} min"
         } ?: "—"
 
-        // Portions
         binding.tvPortions.text = recipe.nbPersonnes?.takeIf { it > 0 }
             ?.let { "$it pers." } ?: "—"
 
-        // Date
         recipe.dateAjout?.let {
             binding.tvDate.text = "Ajoutée le $it"
             binding.tvDate.visibility = View.VISIBLE
@@ -101,22 +97,22 @@ class DetailActivity : AppCompatActivity() {
         ingredients.forEachIndexed { i, ingredient ->
             if (i > 0) binding.containerIngredients.addView(divider())
 
-            val row = layoutInflater.inflate(
-                R.layout.item_ingredient_detail,
-                binding.containerIngredients,
-                false
-            )
-            row.findViewById<TextView>(R.id.tv_ingredient_number).text = (i + 1).toString()
-            row.findViewById<TextView>(R.id.tv_ingredient_name).text = ingredient.nom
-
+            // ingredient row simplified — item_ingredient_detail not yet available
             val qty = buildString {
                 ingredient.quantite?.takeIf { it.isNotBlank() }?.let { append(it) }
                 ingredient.unite?.takeIf { it.isNotBlank() }?.let { u ->
-                    if (isNotEmpty()) append(" "); append(u)
+                    if (isNotEmpty()) append(" ")
+                    append(u)
                 }
             }
-            row.findViewById<TextView>(R.id.tv_ingredient_qty).text = qty.ifBlank { "—" }
-            binding.containerIngredients.addView(row)
+
+            val tv = TextView(this).apply {
+                text = "${i + 1}. ${ingredient.nom}  ${qty.ifBlank { "" }}"
+                textSize = 14f
+                setPadding(40, 16, 40, 16)
+                setTextColor(ContextCompat.getColor(context, R.color.text_primary))
+            }
+            binding.containerIngredients.addView(tv)
         }
     }
 
